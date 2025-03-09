@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:wght@400;700&display=swap');
+
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    font-family: 'Lora', 'Dancing Script', Arial;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+    padding: 0 20px;
+}
+
+nav ul li {
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.brand img {
+    width: 44px;
+    margin-right: 8px;
+}
+
+.container {
+    min-height: 60vh;
+    max-height: 72vh; /* Set a max height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: black;
+    color: white;
+    font-family: 'Lora', 'Dancing Script', Arial;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 23px auto;
+    width: 80%;
+    border-radius: 12px;
+    padding: 20px;
+    background-image: url('./Basics/Background.jpg');
+}
+
+.songItem {
+    display: flex;
+    background-color: rgb(32, 2, 2);
+    color: white;
+    margin: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.songItem img {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 5%;
+}
+
+.bottom {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+    bottom: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    gap: 10px; /* Adds spacing between progress bar and buttons */
+}
+
+.songInfo {
+    position: absolute;
+    margin-left: 20px;
+    padding: 10px;
+    left: 30px; /* Move song info to the left */
+    bottom: 50%;
+    transform: translateY(50%);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between GIF and song name */
+}
+
+#gif {
+    opacity: 1; /* Ensure GIF is visible */
+    width: 42px;
+    height: 24px;
+}
+
+
+#myProgressBar {
+    width: 90%;
+    cursor: pointer;
+}
+
+
+.icons {
+    cursor: pointer;
+    display: flex;
+    gap: 15px;
+}
+
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .songItem {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bottom {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 1rem;
+    }
+
+    .songItem img {
+        width: 40px;
+    }
+
+    #myProgressBar {
+        width: 90%;
+    }
+}
